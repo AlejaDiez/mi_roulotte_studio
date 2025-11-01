@@ -1,6 +1,6 @@
 <aside
     class="sidebar bg-muted fixed top-0 left-0 flex h-screen w-64 flex-col items-start justify-start select-none">
-    <div class="inline-flex h-(--space-y) w-full items-center pl-6">
+    <div class="inline-flex h-(--space-y) w-full items-center px-4.5">
         <a
             title="Mi Roulotte"
             routerLink="/"
@@ -19,7 +19,7 @@
             routerLink="/posts"
             routerLinkActive
             #activePosts="routerLinkActive"
-            class="button w-full justify-start"
+            class="button w-full justify-start px-4.5"
             [class.button-fill-primary]="activePosts.isActive"
             [class.button-fill-muted]="!activePosts.isActive">
             <i class="ibm-notebook"></i>
@@ -29,7 +29,7 @@
             routerLink="/comments"
             routerLinkActive
             #activeComments="routerLinkActive"
-            class="button w-full justify-start"
+            class="button w-full justify-start px-4.5"
             [class.button-fill-primary]="activeComments.isActive"
             [class.button-fill-muted]="!activeComments.isActive">
             <i class="ibm-chat"></i>
@@ -39,7 +39,7 @@
             routerLink="/gallery"
             routerLinkActive
             #activeGallery="routerLinkActive"
-            class="button w-full justify-start"
+            class="button w-full justify-start px-4.5"
             [class.button-fill-primary]="activeGallery.isActive"
             [class.button-fill-muted]="!activeGallery.isActive">
             <i class="ibm-media-library"></i>
@@ -49,7 +49,7 @@
             routerLink="/analytics"
             routerLinkActive
             #activeAnalytics="routerLinkActive"
-            class="button w-full justify-start"
+            class="button w-full justify-start px-4.5"
             [class.button-fill-primary]="activeAnalytics.isActive"
             [class.button-fill-muted]="!activeAnalytics.isActive">
             <i class="ibm-analytics"></i>
@@ -59,7 +59,7 @@
             routerLink="/settings"
             routerLinkActive
             #activeSettings="routerLinkActive"
-            class="button w-full justify-start"
+            class="button w-full justify-start px-4.5"
             [class.button-fill-primary]="activeSettings.isActive"
             [class.button-fill-muted]="!activeSettings.isActive">
             <i class="ibm-settings"></i>
