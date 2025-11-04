@@ -12,15 +12,5 @@
         "CDN_HOST": "https://cdn.miroulotte.es",
         "HOST": "https://miroulotte.es",
         "STUDIO_HOST": "https://studio.miroulotte.es"
-    },
-    "routes": [
-        {
-            "pattern": "studio.miroulotte.es",
-            "custom_domain": true
-        },
-        {
-            "pattern": "studio.miroulotte.es/*",
-            "zone_name": "studio.miroulotte.es"
-        }
-    ]
+    }
 }

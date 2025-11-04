@@ -16,6 +16,7 @@
         "paths": {
             "@app/*": ["./src/app/*"],
             "@components/*": ["./src/components/*"],
+            "@env": ["./src/env.ts"],
             "@guards/*": ["./src/guards/*"],
             "@resolvers/*": ["./src/resolvers/*"],
             "@services/*": ["./src/services/*"],
