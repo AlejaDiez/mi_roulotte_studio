@@ -16,7 +16,10 @@
         "paths": {
             "@app/*": ["./src/app/*"],
             "@components/*": ["./src/components/*"],
+            "@env": ["./src/env.ts"],
             "@guards/*": ["./src/guards/*"],
+            "@interceptors/*": ["./src/interceptors/*"],
+            "@models/*": ["./src/models/*"],
             "@resolvers/*": ["./src/resolvers/*"],
             "@services/*": ["./src/services/*"],
             "@styles/*": ["./src/styles/*"],
