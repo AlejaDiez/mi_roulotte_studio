@@ -2,16 +2,18 @@
     src="/assets/IMG_20200825_185010.webp"
     class="background absolute top-0 left-0 h-full w-full object-cover max-md:hidden" />
 <form
+    [formGroup]="form"
+    (ngSubmit)="submit()"
     class="panel bg-background fixed flex w-full flex-col items-start justify-center gap-[calc(var(--space)*2)] p-7 max-md:h-full md:top-1/2 md:left-1/2 md:w-xl md:-translate-1/2">
     <label>
         Correo electrónico
-        <input type="email" class="input" />
+        <input type="text" formControlName="email" class="input" />
     </label>
-    <label>
+    <label class="mb-[calc(var(--space)*4)]">
         Contraseña
-        <input type="password" class="input" />
+        <input type="password" formControlName="password" class="input" />
     </label>
-    <button class="button button-fill-primary mt-[calc(var(--space)*4)] self-end">
+    <button [disabled]="form.invalid" class="button button-fill-primary self-end">
         <span>Iniciar sesión</span>
     </button>
 </form>

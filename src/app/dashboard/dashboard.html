@@ -66,14 +66,16 @@
             <span>Ajustes</span>
         </a>
     </nav>
-    <div class="user-info button button-fill-muted h-auto max-h-none w-full justify-start py-4">
+    <div
+        (click)="logout()"
+        class="user-info button button-fill-muted h-auto max-h-none w-full justify-start py-4">
         <div
             class="bg-muted-foreground-variant inline-flex h-12 w-12 items-center justify-center rounded-full">
             <i class="icon ibm-user"></i>
         </div>
         <div class="flex flex-col items-start justify-center">
-            <span class="text-normal">Alejandro</span>
-            <span class="text-label text-muted-foreground-variant">Administrador</span>
+            <span class="text-normal h-6">{{user()?.username}}</span>
+            <span class="text-label text-muted-foreground-variant">{{user()?.role}}</span>
         </div>
     </div>
 </aside>

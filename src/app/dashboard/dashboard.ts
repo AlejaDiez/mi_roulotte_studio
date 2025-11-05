@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
-import { RouterLinkActive, RouterLinkWithHref, RouterOutlet } from "@angular/router";
+import { Component, inject } from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
+import { Router, RouterLinkActive, RouterLinkWithHref, RouterOutlet } from "@angular/router";
+import { AuthService } from "@services/auth";
 
 @Component({
     selector: "app-dashboard",
@@ -14,4 +16,14 @@ import { RouterLinkActive, RouterLinkWithHref, RouterOutlet } from "@angular/rou
         class: "relative block h-screen w-screen"
     }
 })
-export class Dashboard {}
+export class Dashboard {
+    private readonly router: Router = inject(Router);
+    private readonly auth: AuthService = inject(AuthService);
+    readonly user = toSignal(this.auth.user);
+
+    logout() {
+        this.auth.logout().subscribe(() => {
+            this.router.navigateByUrl("/login");
+        });
+    }
+}
