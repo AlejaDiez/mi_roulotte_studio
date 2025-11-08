@@ -9,7 +9,6 @@ export const guestGuard: CanActivateFn = (route, state) => {
 
     return auth.user.pipe(
         map((val) => {
-            console.log(val);
             if (val) return new RedirectCommand(router.createUrlTree(["/"]));
             else return true;
         })

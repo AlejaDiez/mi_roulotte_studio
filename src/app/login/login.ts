@@ -13,7 +13,7 @@ import { AuthService } from "@services/auth";
         }
     `,
     host: {
-        class: "relative block h-screen w-screen"
+        class: "relative block h-screen w-screen px-(--space-x) py-(--space-y)"
     }
 })
 export class Login {

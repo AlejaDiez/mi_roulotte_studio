@@ -1,10 +1,10 @@
 <img
     src="/assets/IMG_20200825_185010.webp"
-    class="background absolute top-0 left-0 h-full w-full object-cover max-md:hidden" />
+    class="background absolute top-0 left-0 h-full w-full object-cover" />
 <form
     [formGroup]="form"
     (ngSubmit)="submit()"
-    class="panel bg-background fixed flex w-full flex-col items-start justify-center gap-[calc(var(--space)*2)] p-7 max-md:h-full md:top-1/2 md:left-1/2 md:w-xl md:-translate-1/2">
+    class="panel bg-background relative top-1/2 left-1/2 flex w-full max-w-xl -translate-1/2 flex-col items-start justify-center gap-[calc(var(--space)*2)] p-4.5">
     <label>
         Correo electrónico
         <input type="text" formControlName="email" class="input" />

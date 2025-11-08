@@ -36,7 +36,8 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
+# Environments
+src/env*.ts
+
 # wrangler files
 .wrangler
-.env*
-env.ts
