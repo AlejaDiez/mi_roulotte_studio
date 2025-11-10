@@ -4,7 +4,7 @@
 <form
     [formGroup]="form"
     (ngSubmit)="submit()"
-    class="panel bg-background relative top-1/2 left-1/2 flex w-full max-w-xl -translate-1/2 flex-col items-start justify-center gap-[calc(var(--space)*2)] p-4.5">
+    class="panel bg-background relative top-1/2 left-1/2 flex w-full max-w-xl -translate-1/2 flex-col items-start justify-center gap-[calc(var(--space)*2)] p-(--space-view)">
     <label>
         Correo electrónico
         <input type="text" formControlName="email" class="input" />

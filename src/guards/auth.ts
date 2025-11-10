@@ -14,3 +14,15 @@ export const authGuard: CanActivateFn = (route, state) => {
         })
     );
 };
+
+export const guestGuard: CanActivateFn = (route, state) => {
+    const router = inject(Router);
+    const auth = inject(AuthService);
+
+    return auth.user.pipe(
+        map((val) => {
+            if (val) return new RedirectCommand(router.createUrlTree(["/"]));
+            else return true;
+        })
+    );
+};

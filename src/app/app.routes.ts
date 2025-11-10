@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
-import { authGuard } from "@guards/auth";
-import { guestGuard } from "@guards/guest";
+import { authGuard, guestGuard } from "@guards/auth";
+import { postResolver } from "@resolvers/post";
 
 export const routes: Routes = [
     {
@@ -27,6 +27,9 @@ export const routes: Routes = [
             },
             {
                 path: "posts",
+                resolve: {
+                    posts: postResolver
+                },
                 loadComponent: () => import("./dashboard/posts/posts").then((m) => m.Posts)
             },
             {

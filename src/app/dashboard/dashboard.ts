@@ -4,7 +4,7 @@ import { Router, RouterLinkActive, RouterLinkWithHref, RouterOutlet } from "@ang
 import { AuthService } from "@services/auth";
 
 @Component({
-    selector: "app-dashboard",
+    selector: "page-dashboard",
     imports: [RouterOutlet, RouterLinkWithHref, RouterLinkActive],
     templateUrl: "dashboard.html",
     styles: `

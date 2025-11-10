@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "app-gallery",
+    selector: "section-gallery",
     imports: [],
     templateUrl: "gallery.html"
 })

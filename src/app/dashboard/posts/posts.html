@@ -1,1 +1,11 @@
-<p>posts works!</p>
+<header
+    class="section-header bg-background flex h-(--space-y) w-full items-center justify-between px-(--space-view)">
+    <span class="text-subtitle font-sans font-bold">Publicaciones</span>
+    <button class="button button-fill-muted"><i class="ibm-add"></i></button>
+</header>
+<div
+    class="scroll-container flex h-full flex-col gap-4 overflow-scroll px-(--space-view) pb-(--space-view)">
+    @for (post of posts(); track post.id) {
+    <post-preview [data]="post" />
+    }
+</div>

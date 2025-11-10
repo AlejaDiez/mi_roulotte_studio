@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { AuthService } from "@services/auth";
 
 @Component({
-    selector: "app-login",
+    selector: "page-login",
     imports: [ReactiveFormsModule],
     templateUrl: "login.html",
     styles: `

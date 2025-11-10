@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "app-settings",
+    selector: "section-settings",
     imports: [],
     templateUrl: "settings.html"
 })

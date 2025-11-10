@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "app-analytics",
+    selector: "section-analytics",
     imports: [],
     templateUrl: "analytics.html"
 })
