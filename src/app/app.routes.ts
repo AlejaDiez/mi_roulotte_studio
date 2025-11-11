@@ -6,42 +6,45 @@ export const routes: Routes = [
     {
         path: "",
         canActivate: [authGuard],
-        loadComponent: () => import("./dashboard/dashboard").then((m) => m.Dashboard),
+        loadComponent: () => import("./dashboard/dashboard").then((m) => m.DashboardPage),
         children: [
             {
                 path: "analytics",
                 loadComponent: () =>
-                    import("./dashboard/analytics/analytics").then((m) => m.Analytics)
+                    import("./dashboard/analytics/analytics").then((m) => m.AnalyticsSection)
             },
             {
                 path: "comments",
-                loadComponent: () => import("./dashboard/comments/comments").then((m) => m.Comments)
+                loadComponent: () =>
+                    import("./dashboard/comments/comments").then((m) => m.CommentsSection)
             },
             {
                 path: "gallery",
-                loadComponent: () => import("./dashboard/gallery/gallery").then((m) => m.Gallery)
+                loadComponent: () =>
+                    import("./dashboard/gallery/gallery").then((m) => m.GallerySection)
             },
             {
                 path: "",
-                loadComponent: () => import("./dashboard/home/home").then((m) => m.Home)
+                loadComponent: () => import("./dashboard/home/home").then((m) => m.HomeSection)
             },
             {
                 path: "posts",
                 resolve: {
                     posts: postResolver
                 },
-                loadComponent: () => import("./dashboard/posts/posts").then((m) => m.Posts)
+                loadComponent: () => import("./dashboard/posts/posts").then((m) => m.PostsSection)
             },
             {
                 path: "settings",
-                loadComponent: () => import("./dashboard/settings/settings").then((m) => m.Settings)
+                loadComponent: () =>
+                    import("./dashboard/settings/settings").then((m) => m.SettingsSection)
             }
         ]
     },
     {
         path: "login",
         canActivate: [guestGuard],
-        loadComponent: () => import("./login/login").then((m) => m.Login)
+        loadComponent: () => import("./login/login").then((m) => m.LoginPage)
     },
     { path: "**", redirectTo: "", pathMatch: "full" }
 ];

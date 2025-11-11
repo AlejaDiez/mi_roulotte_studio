@@ -16,7 +16,7 @@ import { AuthService } from "@services/auth";
         class: "relative block h-screen w-screen px-(--space-x) py-(--space-y)"
     }
 })
-export class Login {
+export class LoginPage {
     private readonly router: Router = inject(Router);
     private readonly auth: AuthService = inject(AuthService);
     readonly form = new FormGroup({

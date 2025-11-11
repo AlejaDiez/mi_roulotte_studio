@@ -5,4 +5,4 @@ import { Component } from "@angular/core";
     imports: [],
     templateUrl: "comments.html"
 })
-export class Comments {}
+export class CommentsSection {}

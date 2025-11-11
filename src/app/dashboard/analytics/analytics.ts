@@ -5,4 +5,4 @@ import { Component } from "@angular/core";
     imports: [],
     templateUrl: "analytics.html"
 })
-export class Analytics {}
+export class AnalyticsSection {}

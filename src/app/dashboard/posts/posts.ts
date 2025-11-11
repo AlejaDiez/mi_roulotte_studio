@@ -13,7 +13,7 @@ import { map } from "rxjs";
         class: "flex h-full w-full flex-col items-start justify-start overflow-hidden"
     }
 })
-export class Posts {
+export class PostsSection {
     private readonly route: ActivatedRoute = inject(ActivatedRoute);
     readonly posts: Signal<PostPreview[]> = toSignal(
         this.route.data.pipe(map(({ posts }) => posts))

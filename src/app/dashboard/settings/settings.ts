@@ -5,4 +5,4 @@ import { Component } from "@angular/core";
     imports: [],
     templateUrl: "settings.html"
 })
-export class Settings {}
+export class SettingsSection {}
