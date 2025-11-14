@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
-import { Component, input } from "@angular/core";
+import { Component, inject, input, InputSignal } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { PostPreview } from "@models/post";
 
 @Component({
@@ -11,13 +12,19 @@ import { PostPreview } from "@models/post";
     }
 })
 export class PostPreviewComponent {
-    readonly data = input.required<PostPreview>();
+    private readonly router: Router = inject(Router);
+    private readonly activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+    readonly data: InputSignal<PostPreview> = input.required<PostPreview>();
 
     view() {
         window.open(this.data().url, "_blank");
     }
 
-    edit() {}
+    edit() {
+        this.router.navigate(["edit", this.data().id], {
+            relativeTo: this.activatedRoute
+        });
+    }
 
     delete() {}
 }

@@ -1,6 +1,8 @@
+<div
+    (mouseenter)="togglePanel(true)"
+    class="open-sidebar-area fixed top-0 left-0 h-full w-(--space-view)"></div>
 <aside
-    class="sidebar bg-muted fixed top-0 left-0 flex h-screen w-64 flex-col items-start justify-start transition-[translate] duration-300 select-none"
-    [class.-translate-x-full]="!panel()">
+    class="sidebar bg-muted clip-none fixed top-0 left-0 flex h-screen w-64 flex-col items-start justify-start transition-[clip-path] duration-300 select-none">
     <header class="header inline-flex h-(--space-y) w-full items-center px-(--space-view)">
         <a
             title="Mi Roulotte"
@@ -15,16 +17,9 @@
             </svg>
         </a>
         <button
-            (click)="togglePanel()"
-            class="button -mr-(--space-view)"
-            [class.button-primary]="panel()"
-            [class.button-fill-primary]="!panel()"
-            [class.translate-x-full]="!panel()">
-            @if (panel()) {
+            (click)="togglePanel(false)"
+            class="close-sidebar-button button button-primary -mr-(--space-view)">
             <i class="ibm-side-panel-close"></i>
-            } @else {
-            <i class="ibm-side-panel-open"></i>
-            }
         </button>
     </header>
     <nav class="menu flex w-full grow flex-col items-start justify-start">
@@ -94,8 +89,6 @@
         </div>
     </div>
 </aside>
-<main
-    class="main-content h-screen w-screen overflow-scroll transition-[padding] duration-300"
-    [class.pl-64]="panel()">
+<main class="main-content h-screen w-full overflow-scroll pl-64">
     <router-outlet />
 </main>

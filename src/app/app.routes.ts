@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 import { authGuard, guestGuard } from "@guards/auth";
-import { postResolver } from "@resolvers/post";
+import { editPostResolver, postResolver } from "@resolvers/post";
 
 export const routes: Routes = [
     {
@@ -29,10 +29,20 @@ export const routes: Routes = [
             },
             {
                 path: "posts",
-                resolve: {
-                    posts: postResolver
-                },
-                loadComponent: () => import("./dashboard/posts/posts").then((m) => m.PostsSection)
+                children: [
+                    {
+                        path: "",
+                        resolve: { posts: postResolver },
+                        loadComponent: () =>
+                            import("./dashboard/posts/posts").then((m) => m.PostsSection)
+                    },
+                    {
+                        path: "edit/:id",
+                        resolve: { post: editPostResolver },
+                        loadComponent: () =>
+                            import("./dashboard/posts/edit/edit").then((m) => m.EditPostSection)
+                    }
+                ]
             },
             {
                 path: "settings",

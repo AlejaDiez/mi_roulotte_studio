@@ -1,0 +1,49 @@
+<header
+    class="section-header adaptive-padding bg-background flex h-(--space-y) w-full items-center">
+    <button routerLink="../../" class="back button button-fill-muted">
+        <i class="ibm-chevron-left"></i>
+    </button>
+    <span class="title text-subtitle mx-[calc(var(--space)*4)] font-sans font-bold text-nowrap">
+        {{post().name}} {{post().date | date : "yyyy" }}
+    </span>
+    <nav class="menu ml-auto flex flex-row items-center justify-end">
+        <span class="text-label text-muted-foreground-variant mr-[calc(var(--space)*4)]">
+            Última modificación: {{ post().updatedAt ?? post().createdAt | date : "longDate" }}
+        </span>
+        <button class="information button button-fill-muted">
+            <i class="ibm-information"></i>
+        </button>
+        <button class="publish button button-fill-muted">
+            @if(post().published) {
+            <i class="ibm-wikis"></i>
+            } @else {
+            <i class="ibm-locked"></i>
+            }
+        </button>
+        <button class="save button button-fill-accent">
+            <i class="ibm-save"></i>
+            <span>Guardar</span>
+        </button>
+    </nav>
+</header>
+<div
+    class="scroll-container adaptive-padding flex h-full w-full flex-col gap-4 overflow-scroll pb-(--space-view)">
+    <div
+        class="header-section relative aspect-video max-h-192 min-h-96 w-full cursor-default select-none">
+        <div
+            class="title bg-muted absolute top-(--space-y) -left-(--space-x) z-10 flex h-64 w-[50vw] items-center justify-start overflow-hidden pr-[calc(var(--space-x)/2)] pl-(--space-x)">
+            <textarea
+                rows="2"
+                placeholder="Título"
+                class="text-title placeholder:text-muted-foreground-variant resize-none content-center outline-none"
+                [value]="post().title"></textarea>
+        </div>
+        <div class="hero-image group absolute top-0 left-0 z-0 h-full w-full overflow-hidden">
+            <img
+                [src]="post().image"
+                decoding="async"
+                class="h-full w-full scale-105 object-cover object-center transition-transform duration-300 group-hover:scale-115 group-hover:transition-[scale]" />
+        </div>
+    </div>
+    <div>{{this.post().content | json}}</div>
+</div>

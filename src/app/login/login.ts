@@ -32,7 +32,7 @@ export class LoginPage {
         const { email, password } = this.form.value;
 
         this.auth.login({ email: email!, password: password! }).subscribe((val) => {
-            if (val) this.router.navigateByUrl("/");
+            if (val) this.router.navigate([""]);
         });
     }
 }

@@ -7,7 +7,7 @@
         <h1 class="title text-title shrink-0 text-xl">
             {{ data().name }} {{ data().date | date : 'yyyy' }}
         </h1>
-        <p class="content text-normal overflow-scroll">
+        <p class="content text-normal overflow-scroll text-justify">
             {{ data().description ?? "No description available" }}
         </p>
     </div>

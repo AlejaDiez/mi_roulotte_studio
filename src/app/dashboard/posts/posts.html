@@ -1,10 +1,14 @@
 <header
-    class="section-header bg-background flex h-(--space-y) w-full items-center justify-between px-(--space-view)">
-    <span class="text-subtitle font-sans font-bold">Publicaciones</span>
-    <button class="button button-fill-muted"><i class="ibm-add"></i></button>
+    class="section-header adaptive-padding bg-background flex h-(--space-y) w-full items-center">
+    <span class="title text-subtitle mr-[calc(var(--space)*4)] font-sans font-bold"
+        >Publicaciones</span
+    >
+    <nav class="menu ml-auto flex flex-row items-center justify-end">
+        <button class="button button-fill-primary"><i class="ibm-add"></i></button>
+    </nav>
 </header>
 <div
-    class="scroll-container flex h-full flex-col gap-4 overflow-scroll px-(--space-view) pb-(--space-view)">
+    class="scroll-container adaptive-padding flex h-full w-full flex-col gap-4 overflow-scroll pb-(--space-view)">
     @for (post of posts(); track post.id) {
     <post-preview [data]="post" />
     }

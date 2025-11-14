@@ -12,7 +12,10 @@
         "importHelpers": true,
         "target": "ES2022",
         "module": "preserve",
-        "types": ["node"],
+        "types": [
+          "node",
+          "@angular/localize"
+        ],
         "paths": {
             "@app/*": ["./src/app/*"],
             "@components/*": ["./src/components/*"],
